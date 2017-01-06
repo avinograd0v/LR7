@@ -1,0 +1,14 @@
+{% extends 'base_page.html' %}
+
+{% block title %}
+    Lab_7_RIP
+{% endblock %}
+
+{% block head %}
+   Поздравляем!Авторизация прошла успешно!
+{% endblock %}
+
+{% block body %}
+    Вы авторизованы.
+    <a href="{% url 'exit' %}" class="btn btn-primary">Выйти</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base_page.html' %}
+
+{% block title %}
+    Lab_7_RIP
+{% endblock %}
+
+{% block head %}
+   Авторизация
+{% endblock %}
+
+{% block body %}
+    <form class="form-horizontal" action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+    {% for error in errors %}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{ error }}</strong>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="form-group">
+        <label for="id_username" class="control-label col-sm-2">Логин:</label>
+        <div class="col-sm-3">
+            <input class="form-control" type="text" name="username" id="id_username" value='{{ username }}'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="id_password" class="control-label col-sm-2">Пароль:</label>
+        <div class="col-sm-3">
+            <input class="form-control" type="password" name="password" id="id_password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-1">
+            <button type="submit" class="btn btn-primary" style="float: left">Войти</button>
+        </div>
+        <div class="col-xs-2">
+            <a href="{% url 'registration' %}" class="btn btn-default" style="float: right">Зарегистрироваться</a>
+        </div>
+    </div>
+</form >
+{% endblock %}
